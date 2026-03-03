@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieVue Study</title>
+    <link rel="stylesheet" href="common.css" />
+        <style>
+            .main .feature-card {
+                position: relative;
+            }
+            .main .feature-card .featured-img {
+                display: block;
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                position: relative;
+                z-index: 0;
+            }          
+            .main .feature-card .detail {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                padding: 20px;
+                z-index: 1;
+            }  
+            .main .feature-card .detail h3 {
+                color: #FFF;
+                margin-bottom: 16px;
+            }
+            .main .feature-card .detail p {
+                color: #FFF;
+            }
+
+
+            .main .search-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 16px;
+            }
+            .main .search-box input {
+                display: block;
+                appearance: none;
+                border: none;
+                outline: none;
+                background: none;
+            }
+            .main .search-box input[type=text] {
+                width: 100%;
+                color: #FFF;
+                background-color: #496583;
+                font-size: 20px;
+                padding: 10px 16px;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                transition: 0.4s;
+            }
+            .main .search-box input[type=text]::placeholder {
+                color: #f3f3f3;
+            }
+            .main .search-box input[type=text]:focus {
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            .main .search-box input[type=submit] {
+                width: 100%;
+                max-width: 300px;
+                background-color: #42B883;
+                padding: 16px;
+                border-radius: 24px;
+                color: #FFF;
+                font-size: 20px;
+                text-transform: uppercase;
+                transition: 1s;
+                cursor: pointer;
+            }
+            
+            .main .search-box input[type=submit]:hover {
+                background-color: #3B8070; 
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* 그림자를 더 진하게 */
+            }
+            .main .search-box input[type=submit]:active {
+                background-color: #3B807000;
+            }
+            /* LVHA 순서로 적용 Link - Visited - Hover - Active */
+
+            .main .movies-list {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0px 8px;
+            }
+            .main .movies-list .movie {
+                max-width: 50%;
+                /* flex: 1 1 50%; */
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 50%;
+                padding: 16px 8px;
+            }
+            .main .movies-list .movie .movie-link {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .main .movies-list .movie .movie-link:hover {
+                box-shadow: 8px 12px 0 rgba(0, 0, 0, 0.5);
+            }
+            .main .movies-list .movie .movie-link .product-image {
+                position: relative;
+                display: block;
+            }
+            .main .movies-list .movie .movie-link .product-image img {
+                display: block;
+                width: 100%;
+                height: 275px;
+                object-fit: cover;
+            }
+            .main .movies-list .movie .movie-link .product-image .type {
+                position: absolute;
+                padding: 8px 16px;
+                background-color: #ffffffa0;
+                font-weight: 600;
+                color: #000;
+                bottom: 16px;
+                left: 0px;
+                text-transform: capitalize;
+            }
+            .main .movies-list .movie .movie-link .detail {
+                background-color: #496583;
+                padding: 16px 8px;
+                flex: 1 1 100%;
+                border-radius: 0px 0px 8px 8px;
+            }
+            .main .movies-list .movie .movie-link .detail .year {
+                color: #AAA;
+                font-size: 14px;
+            }
+            .main .movies-list .movie .movie-link .detail h3 {
+                color: #FFF;
+                font-weight: 600;
+                font-size: 18px;
+            }
+
+        </style>
+    <script src="http://aiedu.tplinkdns.com/movie.js"></script>
+</head>
+
+<body onload="load()">
+    <header>
+        <a href="main.html">
+        <h1><span>AI </span>Movies</h1>
+        </a>
+    </header>
+
+    <main class="main">
+     
+        <div class="feature-card">
+            <a href="movie.html">
+                <img src="https://m.media-amazon.com/images/M/MV5BYWRiYjQyOGItNzQ1Mi00MGI1LWE3NjItNTg1ZDQwNjUwNDM2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="Movie Poster" class="featured-img" />
+                <div class="detail">
+                <h3>Ghost in the Shell</h3>
+                <p>It is the year 2029. Technology has advanced so far that cyborgs are commonplace. In addition, human brains can connect to the internet directly. Major Motoko Kusanagi is an officer in Section 9, an elite, secretive police division that deals with special operations, including counter terrorism and cyber crime. She is currently on the trail of the Puppet Master, a cyber criminal who hacks into the brains of cyborgs in order to obtain information and to commit other crimes.</p>
+                </div>
+            </a>
+        </div>
+
+        <form action="#" class="search-box" id="movie-search">
+            <input type="text" name="keyword" placeholder="영화 제목을 입력하세요." />
+            <input type="submit" value="movie 검색" />
+        </form>
+
+        <div class="movies-list">
+            <div class="movie">
+                <a href="movie.html" class="movie-link">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYWRiYjQyOGItNzQ1Mi00MGI1LWE3NjItNTg1ZDQwNjUwNDM2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="Movie Poster"/>
+                    <div class="type">movie</div>
+                </div>
+                <div class="detail">
+                    <p class="year">1995</p>
+                    <h3>Ghost in the Shell</h3>
+                </div>
+                </a>
+            </div>
+
+            <div class="movie">
+                <a href="movie.html" class="movie-link">
+                <div class="product-image">
+                    <img src="https://placehold.co/960x600?text=None" alt="Movie Poster"/>
+                    <div class="type">Box</div>
+                </div>
+                <div class="detail">
+                    <p class="year">2023</p>
+                    <h3>영화 제목</h3>
+                </div>
+                </a>
+            </div>
+        </div>
+       
+    </main>
+</body>
+</html>

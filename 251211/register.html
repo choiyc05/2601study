@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        /* 로그인 화면과 동일한 스타일 유지 */
+        body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { background: #fff; width: 350px; padding: 40px; border-radius: 10px; box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; margin-bottom: 30px; color: #333; }
+        .input-field { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .submit-btn { width: 100%; padding: 12px; background: #2196F3; border: none; color: white; font-size: 16px; border-radius: 5px; cursor: pointer; }
+        ol { list-style: none; padding: 0; margin-top: 20px; text-align: center; }
+        .li { font-size: 14px; color: #666; }
+        .li a { color: #2196F3; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>회원가입</h2>
+        <form>
+            <input type="text" class="input-field" placeholder="아이디" required>
+            <input type="email" class="input-field" placeholder="이메일" required>
+            <input type="password" class="input-field" placeholder="비밀번호" required>
+            <button type="submit" class="submit-btn">가입하기</button>
+        </form>
+        <ol>
+            <li class="li">
+                이미 계정이 있나요? <a href="index.html">로그인 페이지로</a>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

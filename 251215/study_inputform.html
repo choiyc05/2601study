@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <style>
+    * {box-sizing: border-box;}
+    html, body {margin: 0; padding: 0;}
+    form {padding: 10px 10px; box-shadow: 0 20px 20px rgba(0,0,0,0.1);}
+
+    .input-group {padding: 5px 0;}
+    .text-group {display: block;}
+    .text-group input {width: 100%; box-sizing: border-box; border: 1px solid #122a4e23}
+
+    div {display: flex; padding: 5px 0;}
+    label {padding: 5px;}
+    input { }
+    button {width: 100px; height: 40px; color: white; background-color: aquamarine; margin: 10px;}
+    h1 {color: white; background-color: aquamarine; margin: 0; padding: 10px 15px;}
+    </style>
+</head>
+<body>
+        <form>
+            <h1>Input Form</h1>
+
+        <div class="input-group text-group">
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="input-group text-group">
+            <label for="email"> Email </label>
+            <input type="text" name="email" id="email" required>
+        </div>
+        <div class="input-group text-group">
+            <label for="sub"> Subject </label>
+            <input type="text" name="sub" id="sub" required>
+        </div>
+
+         <div>
+            <input type="checkbox" name="checkbox" value="Milk" checked> Milk
+            <input type="checkbox" name="checkbox" value="Sugar"> Sugar
+            <input type="checkbox" name="checkbox" value="Lemon" disabled> Lemon (Disabled)
+        </div>
+
+        <div>
+            <input type="radio" name="gender" id="r1" value="Male" checked>
+            <label for="r1">Male</label>
+            <input type="radio" name="gender" id="r2" value="Female">
+            <label for="r2">Female</label>
+            <input type="radio" name="gender" id="r3" value="r3" disabled>
+            <label for="r3">Don't know (Disabled)</label>
+        </div>
+
+        <button type="submit">Send ></button>
+        </form>
+
+    <!-- https://www.w3schools.com/w3css/w3css_input.asp -->
+</body>
+</html>
